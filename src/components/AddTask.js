@@ -2,6 +2,8 @@ import React from "react";
 
 import { useState } from "react";
 
+const num = 1;
+
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
