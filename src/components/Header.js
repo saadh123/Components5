@@ -1,10 +1,10 @@
 import React from "react";
 import Buttons from "./Buttons";
 
-const Header = ({ title, buttonState, setButtonState }) => {
-  const onClick = () => {
-    setButtonState(!buttonState);
-  };
+const Header = ({ title, buttonState, onClick }) => {
+  // const onClick = () => {
+  //   setButtonState(!buttonState);
+  // };
 
   return (
     <div>

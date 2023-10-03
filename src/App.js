@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import Header from "./components/Header";
 import { Tasks } from "./components/Tasks";
 import AddTask from "./components/AddTask";
+import Cart from "./components/Cart";
 
 const App = () => {
   const [tasks, setTask] = useState([
@@ -34,9 +35,10 @@ const App = () => {
     <div>
       <Header
         title="Task Tracker"
-        buttonState={buttonState}
-        setButtonState={setButtonState}
-        //or can do an onAdd={() => setButtonState(!buttonState)}
+        // buttonState={buttonState}
+        // setButtonState={setButtonState}
+
+        onClick={() => setButtonState(!buttonState)}
       ></Header>
       {tasks.length > 0 ? (
         <Tasks
@@ -48,6 +50,7 @@ const App = () => {
         "Please add task"
       )}
       {buttonState && <AddTask onAdd={addTask}></AddTask>}
+      <Cart></Cart>
     </div>
   );
 };
