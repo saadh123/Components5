@@ -2,13 +2,16 @@ import React from "react";
 
 const Buttons = ({ text, onClick, color }) => {
   return (
-    <button
-      className="btn"
-      onClick={onClick}
-      style={{ backgroundColor: color }}
-    >
-      {text}
-    </button>
+    <div>
+      <hr />
+      <button
+        className="btn"
+        onClick={onClick}
+        style={{ backgroundColor: color }}
+      >
+        {text}
+      </button>
+    </div>
   );
 };
 

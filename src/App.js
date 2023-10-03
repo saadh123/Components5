@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { Tasks } from "./components/Tasks";
 import AddTask from "./components/AddTask";
 import Cart from "./components/Cart";
+import Counter from "./components/Counter";
 
 const App = () => {
   const [tasks, setTask] = useState([
@@ -50,7 +51,10 @@ const App = () => {
         "Please add task"
       )}
       {buttonState && <AddTask onAdd={addTask}></AddTask>}
+      {<hr></hr>}
       <Cart></Cart>
+      {<hr></hr>}
+      <Counter></Counter>
     </div>
   );
 };
