@@ -4,6 +4,7 @@ import { Tasks } from "./components/Tasks";
 import AddTask from "./components/AddTask";
 import Cart from "./components/Cart";
 import Counter from "./components/Counter";
+import Fetch from "./components/Fetch";
 
 const App = () => {
   const [tasks, setTask] = useState([
@@ -55,6 +56,8 @@ const App = () => {
       <Cart></Cart>
       {<hr></hr>}
       <Counter></Counter>
+      {<hr></hr>}
+      <Fetch></Fetch>
     </div>
   );
 };
