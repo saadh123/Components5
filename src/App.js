@@ -11,7 +11,7 @@ const App = () => {
     { id: 1, text: "Doctor's Appt", day: "Feb 6", reminder: true },
     { id: 2, text: "Cat's Appt", day: "Feb 7", reminder: true },
     { id: 3, text: "Dog's Appt", day: "Feb 8", reminder: true },
-    { id: 4, text: "Horse's Appt", day: "Feb 9", reminder: true },
+    { id: 4, text: "Horse's Appt",how day: "Feb 9", reminder: true },
   ]);
 
   const [buttonState, setButtonState] = useState(false);

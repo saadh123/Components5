@@ -26,11 +26,11 @@ const Counter = () => {
   //     }, 1000);
   //   }, [count]);
 
-  //   useEffect(() => {
-  //     setInterval(() => {
-  //       setCounter((prev) => prev + 1);
-  //     }, 1000);
-  //   }, []);
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setCounter((prev) => prev + 1);
+  //   }, 1000);
+  // }, []);
 
   return <h3>Count is {count} </h3>;
 };
