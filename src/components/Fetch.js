@@ -46,7 +46,12 @@ const Post = ({ id }) => {
   //     returnData();
   //   }, [id]);
 
-  return <div>{text.body}</div>;
+  return (
+    <div>
+      <h1>FETCH1</h1>
+      {text.body}
+    </div>
+  );
 };
 
 export default Fetch;
