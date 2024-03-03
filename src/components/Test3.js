@@ -26,11 +26,9 @@ const Test3 = () => {
       <h1>{resource}</h1>
       {resource === "posts"
         ? data.map((post) => <div key={post.id}>{post.title}</div>)
-        : "NO"}
-
-      {data.map((data) => {
-        return <pre> {JSON.stringify(data)}</pre>;
-      })}
+        : data.map((post) => {
+            return <pre> {JSON.stringify(post.name)}</pre>;
+          })}
     </div>
   );
 };

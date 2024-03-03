@@ -5,10 +5,11 @@ import styles from "./styles.module.css";
 //FUNCTIONAL FORM
 
 const DecrementCount = () => {
+  const [count, setCount] = useState(() => countInitial());
+
   function countInitial() {
     return 4;
   }
-  const [count, setCount] = useState(() => countInitial());
   //   const [count, setCount] = useState(() => 4);
   // const [count, setCount] = useState(4);
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 
-const Task = ({ task, onDelete, onToggle }) => {
+const Task = ({ task, onDelete, onToggle, index }) => {
   return (
     <div
       className={`task ${task.reminder ? "reminder" : ""}`}
@@ -9,9 +9,10 @@ const Task = ({ task, onDelete, onToggle }) => {
     >
       <h3>
         {task.text}
+        {"_" + index}
         <FaTimes
           style={{ color: "red", cursor: "pointer" }}
-          onClick={() => onDelete(task.id)}
+          onClick={() => onDelete(index)}
         />
         {/* If you're seeing the event object being logged when the deleteTask
         function is called, it's because React's event handling system

@@ -18,8 +18,8 @@ const Counter = () => {
       {count}
       <button
         onClick={() => {
-          setCount(++count);
-          //   setCount((prevCount) => prevCount + 1);
+          // setCount(++count);
+          setCount((prevCount) => prevCount + 1);
           //   setCount(count + 1);
         }}
       >

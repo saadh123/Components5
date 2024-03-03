@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 const FetchPost = () => {
   const [id, setId] = useState(1);
-  const [text, setText] = useState("");
+  const [data, setData] = useState("");
 
   const onClick = () => {
     setId(Math.round(Math.random() * 150));
@@ -15,16 +15,20 @@ const FetchPost = () => {
     // })
   };
 
-  // const fetched = async () => {
-  //   try {
-  //     const res = await fetch(`https://dummyjson.com/posts/${id}`);
-  //     const data = await res.json();
-  //     setText(data.body);
-  //   } catch (error) {
-  //     // Handle any potential errors here
-  //     console.error(error);
-  //   }
-  // };
+  const fetched = async () => {
+    try {
+      const res = await fetch(`https://dummyjson.com/posts/${id}`);
+      const data = await res.json();
+      setData(data.body);
+    } catch (error) {
+      // Handle any potential errors here
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetched();
+  }, [id]);
 
   //   const fetched = () => {
   //     fetch(`https://dummyjson.com/posts/${id}`)
@@ -44,21 +48,21 @@ const FetchPost = () => {
   //     });
   //   };
 
-  useEffect(() => {
-    fetch(`https://dummyjson.com/posts/${id}`)
-      .then((res) => {
-        res.json().then((data) => {
-          setText(data.body);
-          console.log(text);
-        });
-      })
-      .catch((err) => console.log(err));
-  }, [id]);
+  // useEffect(() => {
+  //   fetch(`https://dummyjson.com/posts/${id}`)
+  //     .then((res) => {
+  //       res.json().then((data) => {
+  //         setText(data.body);
+  //         console.log(text);
+  //       });
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, [id]);
 
   return (
     <div className={styles.FetchPost}>
       <button onClick={onClick}>Show me a different post</button>
-      {text}
+      {data}
     </div>
   );
 };
