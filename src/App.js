@@ -22,18 +22,19 @@ const App = () => {
 
   const [buttonState, setButtonState] = useState(false);
 
+  // const deleteTask = (id) => {
+  //   setTask(
+  //     tasks.filter((task, index) => {
+  //       return task.id !== id || index !== id;
+  //     })
+  //   );
+  // };
   const deleteTask = (id) => {
     setTask(tasks.slice(0, id).concat(tasks.slice(id + 1)));
   };
 
   // const deleteTask = (id) => {
-  //   // setTask(tasks.filter((task, index) => id !== index));
-  //   setTask([...tasks.slice(0, id), ...tasks.slice(id + 1, tasks.length)]);
-  // };
-  //nested if we don't use spread operator
-
-  // const deleteTask = (id) => {
-  //   setTask(tasks.slice(0, id).concat(tasks.slice(id + 1)));
+  //   setTask([...tasks.slice(0, id), ...tasks.slice(id + 1)]);
   // };
 
   const toggleReminder = (id) => {
@@ -48,12 +49,28 @@ const App = () => {
     });
   };
 
+  // const toggleReminder = (id) => {
+  //   setTask(
+  //     tasks.map((task) => {
+  //       if (task.id === id) {
+  //         return { ...task, reminder: !task.reminder };
+  //       } else {
+  //         return task;
+  //       }
+  //     })
+  //   );
+  // };
+
+  // const addedTask = (task) => {
+  //   setTask([...tasks, task]);
+  // };
+
   const addTask = (addedTask) => {
     const id = Math.floor(Math.random() * 10000) + 1;
     const newTask = { id, ...addedTask };
     //spread otherwise nested
-    // setTask((prev) => [...prev, newTask]);
-    setTask([...tasks, newTask]);
+    setTask((prev) => [...prev, newTask]);
+    // setTask([...tasks, newTask]);
   };
 
   useEffect(() => {
